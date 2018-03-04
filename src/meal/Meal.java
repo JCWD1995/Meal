@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Meal {
     
     double mealPrice;
-    int tipAmount, tax;
+    double tipAmount, tax;
     
     public Meal() {
         try (Scanner sc = new Scanner(System.in)) {
@@ -29,8 +29,7 @@ public class Meal {
     public int totalPrice() {
         final int percent = 100;
         final int plusPercent = 1;
-        double total = mealPrice * (plusPercent + (tipAmount / percent)) * (plusPercent + (tax / percent));
-        return (int) Math.round(total);
+        return (int) Math.round(mealPrice*(plusPercent+(tipAmount/percent))*(plusPercent+(tax/percent)));
     }
     
     public static void main(String[] args) {
